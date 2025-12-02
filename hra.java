@@ -8,7 +8,7 @@ Scanner sc = new Scanner (System.in);
  System.out.println();
 System.out.println("Hej bracho, vitej ve hre!");
  System.out.println();
-System.out.println("Prvni volba, kterou budes muset udelat bude mezi dvema dulezitymi vecmi.");                 // Denys je teplej 🎅🏿     
+System.out.println("Prvni volba, kterou budes muset udelat bude mezi dvema dulezitymi vecmi.");
  System.out.println();
  System.out.println("Chces mit klacek nebo mec?");
  System.out.println();
