@@ -1,4 +1,4 @@
-package randombull.CelaHra.Postava;
+package randombull.randombull.CelaHra;
 import java.util.Scanner;
 import java.util.Random;
 
