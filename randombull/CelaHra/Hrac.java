@@ -1,9 +1,8 @@
 package randombull.randombull.CelaHra;
 
-public class Hrac {
-    String jmeno;
-    int hp = 10;
+public class Hrac extends Entita {
     Boolean mec;
     int penize = 100;
     Boolean vysoky;
 }
+
