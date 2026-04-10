@@ -11,11 +11,10 @@ public class HraMain {
         zombie.damage = 5;
 
 
-
-
         Hrac hrac = uvodJmeno();
 
         uvodOtazky(hrac);
+
 
         fight(hrac, zombie);
 
@@ -28,10 +27,10 @@ public class HraMain {
         System.out.println();
         System.out.println("Jdes fightit s " + enemy.jmeno);
         System.out.println();
-        if (hrac.vysoky = true){
+        if (hrac.vysoky == true){
             System.out.println("Jsi vysoky, takze davas damage - 2 hp");
             hrac.damage = 2;
-        }else if (hrac.vysoky = false){
+        }else if (hrac.vysoky == false){
             System.out.println("Jsi nizky, takze damage - 1 hp");
             hrac.damage = 1;
         }
@@ -80,10 +79,13 @@ public class HraMain {
         System.out.println();
         Scanner sc = new Scanner(System.in);
         String AB = sc.nextLine();
-        AB = vail(AB, sc);
-        if (AB.equals("a") && AB.equals("A")) {
+        while (!AB.equals("a") && !AB.equals("A") &&  !AB.equals("b") &&  !AB.equals("B")) {
+            System.out.println("Napis A nebo B.");
+            AB = sc.nextLine();
+        }
+        if (AB.equals("a") || AB.equals("A")) {
                 hrac.vysoky = true;
-            }else if (AB.equals("b") && AB.equals("B")) {
+            }else if (AB.equals("b") || AB.equals("B")) {
                 hrac.vysoky = false;
         }
 
