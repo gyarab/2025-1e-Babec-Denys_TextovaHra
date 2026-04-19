@@ -11,7 +11,6 @@ Scanner sc = new Scanner (System.in);
  System.out.println();
  String volba1 = sc.nextLine();
 
-
      mecNeboKlacek(volba1);
 
      String jmeno = getJmeno(sc);
