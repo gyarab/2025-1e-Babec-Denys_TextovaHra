@@ -80,7 +80,9 @@ public class HraMain {
 
     }
 
-    private static void scena1(Hrac hrac){  // Chce si udelat mec?
+    private static void scena1(Hrac hrac)
+
+        {  // Chce si udelat mec?
         Scanner sc = new Scanner(System.in);
         System.out.println();
         System.out.println("Jak se prochazis lesem vidis na zemi zniceny mec.");
@@ -88,14 +90,14 @@ public class HraMain {
         System.out.println();
 
         int sanceMec;
-        if(hrac.zdatny == true) {
+        if (hrac.zdatny == true) {
             sanceMec = 2;
-        }else {
+        } else {
             sanceMec = 5;
         }
 
 
-        System.out.println("Mas sanci 1:" +  sanceMec + " , ze ho opravis.");
+        System.out.println("Mas sanci 1:" + sanceMec + " , ze ho opravis.");
         System.out.println("Jestli ne, tak si uberes zivot.");
         System.out.println("Jestli jo, tak mas mec (tvuj damage +2).");
         System.out.println();
@@ -108,19 +110,119 @@ public class HraMain {
         Random random = new Random();
         int rand = random.nextInt(sanceMec) + 1;
 
-        if(AB.equalsIgnoreCase("a") == true) {
-            if (rand == 1) {
+        if (AB.equalsIgnoreCase("a") == true) { //chce si udelat mec
+            if (rand == 1) {   //povedlo
                 hrac.mec = true;
                 System.out.println("Mas mec kamo.");
-            }else{
-                hrac.klacek = true;
+            } else {
+                hrac.klacek = true;//nepovedlo
                 hrac.hp = hrac.hp - 1;
                 System.out.println("Bohuzel amigo, porezal ses, ale mas klacek :D");
             }
-        }else if (AB.equalsIgnoreCase("b") == true) {
+        } else if (AB.equalsIgnoreCase("b") == true) { //nechce si udelat mec
             hrac.klacek = true;
             System.out.println("Vykaslal ses na mec a vzal misto toho klacek.");
         }
+
+        //nakup mece
+        if (hrac.mec == true) {
+            System.out.println();
+            System.out.println("Prijde k tobe muz, ktery se jmenuje Andrej: Hele muzu ten mec za 15 zlataku?");
+            System.out.println();
+            System.out.println("Muzes ho prodat (a teoreticky zkusit zvetsit cenu) nebo si ho nechat");
+            System.out.println("A) Prodat(mozna obchdovat)      B)Nechat si ho");
+            System.out.println();
+
+            if (AB.equalsIgnoreCase("a") == true) { // Chce prodat
+
+                int sanceCena;
+                if (hrac.charisma == true) {
+                    sanceCena = 2;
+                } else {
+                    sanceCena = 5;
+                }
+
+                System.out.println("Mas sanci 1:" + sanceCena + " , ze zvednes cenu na 25 zlataku.");
+                System.out.println("Jestli se ti to nepovede, tak on ji snizi na 5.");
+                System.out.println("Jestli jo, tak nemas mec, ale mas + 25 zlataku.");
+                System.out.println();
+                System.out.println("A) Pokusit se o smlouvani     B) Vzit to za 15");
+                System.out.println();
+
+                AB = sc.nextLine();
+                AB = vail(AB, sc);
+                rand = random.nextInt(sanceCena) + 1;
+
+                if (AB.equalsIgnoreCase("a") == true) { //Chce smlouvat
+
+                    if (rand == 1) {   //povedlo
+                        hrac.mec = false;
+                        hrac.klacek = true;
+                        hrac.penize = hrac.penize + 25;
+                        System.out.println();
+                        System.out.println("Andrej: No... Tak jo, tady mas 25 zlataku a tady mas klacek.");
+
+                    } else { //nepovedlo
+                        System.out.println();
+                        System.out.println("Andrej: hele nebud drzej, tak ted menim cenu na 5 zlataku. Beres?");
+                        System.out.println();
+                        System.out.println("A) Beru     B) Ne, diky");
+                        System.out.println();
+
+                        AB = sc.nextLine();
+                        AB = vail(AB, sc);
+
+                        if (AB.equalsIgnoreCase("a") == true) { //Bere
+                            hrac.mec = false;
+                            hrac.klacek = true;
+                            hrac.penize = hrac.penize + 5;
+
+                            System.out.println();
+                            System.out.println("Andrej: tak tady mas 5 zlataku a klacek, abys neumrel.");
+                            System.out.println();
+
+                        } else if (AB.equalsIgnoreCase("b") == true) { //Nechce za 5
+
+                            System.out.println();
+                            System.out.println("Andrej: tak potom jdi do dreveneho zachodu!!!");
+                            System.out.println();
+
+                    }
+
+
+                    }
+
+
+
+                } else if (AB.equalsIgnoreCase("b") == true) { //Nechce smlouvat
+
+                    hrac.mec = false;
+                    hrac.klacek = true;
+                    hrac.penize = hrac.penize + 15;
+
+                    System.out.println();
+                    System.out.println("Andrej: vazne?? JOOO tady mas 15 zlataku a klidne si vezmi muj klacek, abys prezil.");
+                    System.out.println();
+
+                }
+
+
+
+
+
+        } else if (AB.equalsIgnoreCase("b") == true) { // Nechce prodat
+            System.out.println("Andrej: Tak nic no :(");
+        }
+
+
+
+
+
+
+        }
+
+
+
 
 
     }
