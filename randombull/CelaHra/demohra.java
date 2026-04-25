@@ -2,7 +2,7 @@ package randombull.randombull.CelaHra;
 import java.util.Scanner;
 import java.util.Random;
 
-public class hra{
+public class demohra {
  public static void main(String [] args){
 Scanner sc = new Scanner (System.in);
      uvod();
