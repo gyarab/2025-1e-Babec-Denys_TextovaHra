@@ -2,6 +2,10 @@ package randombull.randombull.CelaHra;
 
 public class Hrac extends Entita {
 
+    public Hrac(){
+        hp = 20;
+        damage = 5;
+    }
     int procentoOpilost = 0;
     int procentoPlnosti = 0;
     int penize = 20;
