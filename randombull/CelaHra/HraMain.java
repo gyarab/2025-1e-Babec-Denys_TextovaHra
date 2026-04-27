@@ -5,11 +5,11 @@ import java.util.Random;
 
 public class HraMain {
     public static void main(String[] args) throws InterruptedException {
-        String wannaPlay = "a";
+        boolean wannaPlay = true;
         int fight = 0;
         boolean poprve = true;
 
-        while (wannaPlay.equals("a")) {
+        while (wannaPlay == true) {
             clearScreen();
             System.out.println("=============NOVA HRA=============");
 
@@ -267,7 +267,7 @@ public class HraMain {
         if (hrac.charisma == true){
             System.out.println();
             System.out.println("Prijdes do baru a protoze se nebojis lidi tak si sednes do prostred baru.");
-            System.out.println("Prijde k tobe barman.");
+            System.out.println("Prijde k tobe barmanka.");
         }else{
             System.out.println();
             System.out.println("Prijdes do baru a sednes si do rohu.");
@@ -283,7 +283,7 @@ public class HraMain {
         AB = vail(AB, sc);
 
         if (AB.equalsIgnoreCase("a") == true) {//Jde si dat
-            barvail(AB,sc, hrac);
+            hospoda(AB,sc, hrac);
             if (hrac.procentoOpilost > 25 && hrac.procentoPlnosti > 30) {
                 System.out.println("Opil ses a byl si plny jidla takze si usnul. V pulnoci byla rvacka a spadla na tebe zidle, ktera te zabila.");
             }
@@ -379,7 +379,7 @@ public class HraMain {
             AB = sc.nextLine();
             AB = vail(AB, sc);
             if (AB.equalsIgnoreCase("a") == true) {
-                obchodvail(AB, sc, hrac);
+                elixir(AB, sc, hrac);
             }else if (AB.equalsIgnoreCase("b") == true) {
                 System.out.println("Alfonso: aha, chrabry clovek, tak uvidime co dokazes.");
             }
@@ -817,27 +817,27 @@ public class HraMain {
     }
 
     private static String vail(String AB, Scanner sc) {
-        while (!AB.equals("a") && !AB.equals("A") &&  !AB.equals("b") &&  !AB.equals("B")) {
+        while (!AB.equalsIgnoreCase("a") &&  !AB.equalsIgnoreCase("b") ) {
             System.out.println("Napis A nebo B.");
             AB = sc.nextLine();
         }
         return AB;
     }
     private static String vailC(String ABC, Scanner sc) {
-        while (!ABC.equals("a") && !ABC.equals("A") &&  !ABC.equals("b") &&  !ABC.equals("B") &&  !ABC.equals("c") &&  !ABC.equals("C")) {
+        while (!ABC.equalsIgnoreCase("a") &&  !ABC.equalsIgnoreCase("b")  && !ABC.equalsIgnoreCase("c") ) {
             System.out.println("Napis A nebo B nebo C.");
             ABC = sc.nextLine();
         }
         return ABC;
     }
     private static String vailD(String ABCD, Scanner sc){
-        while (!ABCD.equals("a") && !ABCD.equals("A") &&  !ABCD.equals("b") &&  !ABCD.equals("B") &&  !ABCD.equals("c") &&  !ABCD.equals("C") &&  !ABCD.equals("d") &&  !ABCD.equals("D")) {
+        while (!ABCD.equalsIgnoreCase("a") &&  !ABCD.equalsIgnoreCase("b")  && !ABCD.equalsIgnoreCase("c") &&  !ABCD.equalsIgnoreCase("d")) {
             System.out.println("Napis A nebo B nebo C nebo D.");
             ABCD = sc.nextLine();
         }
         return ABCD;
     }
-    private static void barvail(String AB, Scanner sc, Hrac hrac){
+    private static void hospoda(String AB, Scanner sc, Hrac hrac){
         String chcesJeste = "a";
         while(chcesJeste.equalsIgnoreCase("a")) {
             System.out.println();
@@ -858,7 +858,7 @@ public class HraMain {
                 String ABCD = sc.nextLine();
                 ABCD = vailD(ABCD, sc);
 
-                PitiJidlo pitiJidlo = coZrat(zradlo, ABCD);
+                PitiJidlo pitiJidlo = coJist(zradlo, ABCD);
                 maPrachy(hrac, pitiJidlo);
 
             } else if (AB.equalsIgnoreCase("b") == true) {//Jde si dat Jidlo
@@ -872,7 +872,7 @@ public class HraMain {
                 String ABCD = sc.nextLine();
                 ABCD = vailD(ABCD, sc);
 
-                PitiJidlo pitiJidlo = coZrat(zradlo, ABCD);
+                PitiJidlo pitiJidlo = coJist(zradlo, ABCD);
                 maPrachy(hrac, pitiJidlo);
 
             }
@@ -884,7 +884,7 @@ public class HraMain {
             chcesJeste = vail(chcesJeste, sc);
         }
     }
-    private static void obchodvail(String AB, Scanner sc, Hrac hrac){
+    private static void elixir(String AB, Scanner sc, Hrac hrac){
         String chcesJeste = "a";
         System.out.println("Honza: vitejte v mem obchode s elixiry. Jaky elixir byste chteli?");
         while(chcesJeste.equalsIgnoreCase("a")) {
@@ -920,7 +920,7 @@ public class HraMain {
             System.out.println("Mas jenom " + hrac.penize + " zlataku");
         }
     }
-    private static PitiJidlo coZrat(int zradlo, String ABCD){
+    private static PitiJidlo coJist(int zradlo, String ABCD){
         PitiJidlo  pitiJidlo = new PitiJidlo();
         if(zradlo == 1){
             switch(ABCD){
@@ -993,19 +993,19 @@ public class HraMain {
         }
         System.out.println();
     }
-    private static String wannaPlay(Scanner sc, String wannaPlay) {
+    private static boolean wannaPlay(Scanner sc, boolean wannaPlay) {
         System.out.println("Chces jeste jednou?");
         System.out.println("""
                 A) Jo
-                B) Hell Nah
+                B) Ne
                 """);
         String AB = sc.nextLine();
         AB = vail(AB, sc);
 
         if(AB.equals("A") || AB.equals("a")) {
-            wannaPlay = "a";
+            wannaPlay = true;
         }else{
-            wannaPlay = "b";
+            wannaPlay = false;
         }
         return wannaPlay;
     }
