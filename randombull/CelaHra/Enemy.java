@@ -5,7 +5,7 @@ public class Enemy extends Entita {
 }
 class MensiVlci extends Enemy {
     public MensiVlci(){
-        jmeno = "Mensi vlci";
+        name = "Mensi vlci";
         hp = 20;
         damage = 4;
         pady = 1;
@@ -13,7 +13,7 @@ class MensiVlci extends Enemy {
 }
 class VetsiVlk extends Enemy {
     public VetsiVlk() {
-        jmeno = "Vetsi vlk";
+        name = "Vetsi vlk";
         hp = 35;
         damage = 8;
         pady = 2;
@@ -21,7 +21,7 @@ class VetsiVlk extends Enemy {
 }
 class Arsen extends Enemy{
     public Arsen(){
-        jmeno = "Arsen";
+        name = "Arsen";
         hp = 30;
         damage = 7;
         pady = 3;
@@ -29,9 +29,9 @@ class Arsen extends Enemy{
 }
 class drak extends Enemy{
     public drak(){
-        jmeno = "drak";
-        hp = 45;
-        damage = 10;
+        name = "drak";
+        hp = 50;
+        damage = 15;
         pady = 4;
     }
 }

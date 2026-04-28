@@ -60,10 +60,10 @@ public class HraMain {
         printSlow("V");
         System.out.println();
         Scanner sc = new Scanner(System.in);
-        hrac.jmeno = sc.nextLine();
+        hrac.name = sc.nextLine();
         System.out.println();
         if (poprve == true){
-            System.out.println("Hmm, tak jo " + hrac.jmeno + " pokusim se ti vysvetlit jak to tady funguje.");
+            System.out.println("Hmm, tak jo " + hrac.name + " pokusim se ti vysvetlit jak to tady funguje.");
             System.out.println("Vzdy ti napisu jestli chces udelat to nebo to. Jo, mimochodem mas " + hrac.hp +" hp (zivotu)");
             System.out.println("A "+ hrac.penize + " zlataku.");
             System.out.println();
@@ -86,14 +86,14 @@ public class HraMain {
 
         if((ABC.equalsIgnoreCase("a")) == true) {
             hrac.zdatny = true;
-            System.out.println("Mozek se ti zvetsil nahoru. Ted vyhrajes kamen,nuzky, papir s Einsteinem.");
+            System.out.println("Mozek se ti zvetsil nahoru. Ted vyhrajes kamen,nuzky,papir s Einsteinem.");
         }else if ((ABC.equalsIgnoreCase("b")) == true) {
             hrac.bojovnik = true;
             hrac.damage = hrac.damage + 2;
             System.out.println("Zvetsili se ti bicepsy minimalne o dva centimetry a ted se te boji i pololetka z matiky.");
         }else if ((ABC.equalsIgnoreCase("c")) == true) {
             hrac.charisma = true;
-            System.out.println("Mas vetsi oboci a ted dokazes premluvit Davida Gogginse at vezme tu lod.");
+            System.out.println("Mas vetsi oboci a diky tomu dokazes premluvit kazdeho, ze je trava modra.");
         }
 
     }
@@ -352,15 +352,15 @@ public class HraMain {
     } //bar
     private static int scena22(Hrac hrac, Scanner sc, int fight) throws InterruptedException {//Kralovstvi
         System.out.println();
-        System.out.println("Hned jak prijdes do kralovstvi pribehne za tebou nizsi zena: nejste vy " + hrac.jmeno + "?");
-        System.out.println(hrac.jmeno + ": no, jo.");
+        System.out.println("Hned jak prijdes do kralovstvi pribehne za tebou nizsi zena: nejste vy " + hrac.name + "?");
+        System.out.println(hrac.name + ": no, jo.");
         System.out.println("Nizsi zena: pojdte za mnou.");
         System.out.println("Prijdes do hradu, kde sidli kral Alfonso Fernandovsky.");
         System.out.println("Alfonso: diky Viol, ze si ho privedla sem.");
         System.out.println("Viol: v pohode. Pak Viol odesla.");
         System.out.println();
         System.out.println("Alfonso: pozval jsem si te, abys pomohl tomuhle kralovstvi.");
-        System.out.println("Alfonso: Nedaleko odsud je obrovsky drak, ktery jde sem a my potrebujeme TEBE " + hrac.jmeno +".");
+        System.out.println("Alfonso: Nedaleko odsud je obrovsky drak, ktery jde sem a my potrebujeme TEBE " + hrac.name +".");
         System.out.println("Alfonso: jdes do toho?");
         if(hrac.zdatny == true){
             System.out.println("A) 'Podle mych vypoctu to zni jako dobry napad.'           B) 'Podle mych vypoctu je nemozny to prezit.'");
@@ -374,7 +374,7 @@ public class HraMain {
 
         if (AB.equalsIgnoreCase("a") == true) {// jde fightit s drakem
             System.out.println();
-            System.out.println("Alfonso: to velice rad slysim. Predtim ale musis jit k nasemu kouzelnikovi s elixiry: k Honzovi Findlerovi.");
+            System.out.println("Alfonso: to velice rad slysim. Predtim ale musis jit k nasemu kouzelnikovi s elixiry: k Honzovi.");
             System.out.println("A) 'Tak jo, jdu tam.'            B)'Asi neni potreba.'");
             AB = sc.nextLine();
             AB = vail(AB, sc);
@@ -434,8 +434,8 @@ public class HraMain {
     }
     private static void fight12(Hrac hrac, Scanner sc){
         System.out.println();
-        System.out.println("Protoze si nechtel nebo nemohl si sedel v baru az do pulnoci.");
-        System.out.println("Trochu sis prispal a hned jak ses probudil uvidela muze, ktery je asi trikrat vetsi nez ty.");
+        System.out.println("Protoze si nechtel nebo nemohl tak si sedel v baru az do pulnoci.");
+        System.out.println("Trochu sis prispal a hned jak ses probudil uvidel tak si uvidel muze, ktery je asi trikrat vetsi nez ty.");
         if(hrac.bojovnik == true){
             System.out.println("Si bojovnik, ale presto si tak velkeho muze nevidel.");
         }
@@ -461,14 +461,14 @@ public class HraMain {
             fight(hrac,arsen, sc);
         }else if (AB.equalsIgnoreCase("b") == true) {
             System.out.println("Velky muz: Arsen, co ty?");
-            System.out.println("A) " + hrac.jmeno + "      B) Co te to zajima");
+            System.out.println("A) " + hrac.name + "      B) Co te to zajima");
             System.out.println();
             AB = sc.nextLine();
             AB = vail(AB, sc);
 
             if (AB.equalsIgnoreCase("a") == true) {
                 System.out.println("Arsen: hmmm, nikdo mi nechtel rict svoje jmeno, vsichni se me boji, ja asi pujdu, tady mas 15 zlataku.");
-                System.out.println(hrac.jmeno + ": diky.");
+                System.out.println(hrac.name + ": diky.");
                 System.out.println("Arsen odesel a tys zustal v baru.");
                 hrac.penize = hrac.penize + 15;
 
@@ -496,9 +496,9 @@ public class HraMain {
         System.out.println();
         System.out.println("Hodili te do vezeni.");
         System.out.println("Vezensky dozorce: hej ty.");
-        System.out.println(hrac.jmeno + ": ja?");
+        System.out.println(hrac.name + ": ja?");
         System.out.println("Vezensky dozorce: a je tady jeste nekdo?");
-        System.out.println(hrac.jmeno + ": no.... ne");
+        System.out.println(hrac.name + ": no.... ne");
         System.out.println("Vezensky dozorce: tak jenom abys vedel, zitra budes povesen, cus.");
         System.out.println("Pak dozorce odesel.");
         System.out.println();
@@ -543,7 +543,7 @@ public class HraMain {
         }else if (AB.equalsIgnoreCase("b") == true) {
             System.out.println();
             System.out.println("Hlas: Ale no tak, nikdo nechce. Bude sranda.");
-            System.out.println(hrac.jmeno + ": tak jo.");
+            System.out.println(hrac.name + ": tak jo.");
             System.out.println("Hlas: tak jdeme na to.");
         }
 
@@ -657,10 +657,10 @@ public class HraMain {
             }
 
                 if (enemy.pady == 1) {
-                    System.out.println(enemy.jmeno + " ted maji " + enemy.hp + " hp");
+                    System.out.println(enemy.name + " ted maji " + enemy.hp + " hp");
                     System.out.println();
                 } else {
-                    System.out.println(enemy.jmeno + " ted ma " + enemy.hp + " hp");
+                    System.out.println(enemy.name + " ted ma " + enemy.hp + " hp");
                     System.out.println();
                 }
 
@@ -714,15 +714,15 @@ public class HraMain {
                     System.out.println();
                     if (hrac.hp <= 0) {
                         if (enemy.pady == 1) {
-                            System.out.println(enemy.jmeno + " ti ubrali " + randDam + " a tim te zabili");
+                            System.out.println(enemy.name + " ti ubrali " + randDam + " a tim te zabili");
                         } else {
-                            System.out.println(enemy.jmeno + " ti ubral " + randDam + " a tim te zabil");
+                            System.out.println(enemy.name + " ti ubral " + randDam + " a tim te zabil");
                         }
                     } else {
                         if (enemy.pady == 1) {
-                            System.out.println(enemy.jmeno + " ted na tebe jdou zautocit a uberou ti " + randDam);
+                            System.out.println(enemy.name + " ted na tebe jdou zautocit a uberou ti " + randDam);
                         } else {
-                            System.out.println(enemy.jmeno + " ted jde na tebe zautocit a ubere ti " + randDam);
+                            System.out.println(enemy.name + " ted jde na tebe zautocit a ubere ti " + randDam);
                         }
                     }
                 }
@@ -732,46 +732,46 @@ public class HraMain {
                     case 1:
                         System.out.println();
                         System.out.println("Dva maly vlci te uplne roztrhali. Lidi nad nimi vyhrali a tys byl pohrben den potom.");
-                        System.out.println("Vsichni si te ted pamatuji jako statecneho bojovnika dvou vlku, ktery se jmenoval " + hrac.jmeno);
+                        System.out.println("Vsichni si te ted pamatuji jako statecneho bojovnika dvou vlku, ktery se jmenoval " + hrac.name);
                         break;
                     case 2:
                         System.out.println();
                         System.out.println("Velky vlk te zachytil a vyhodil do vysky 30 metru. Lidi nad nim vyhrali a tys byl pohrben den potom.");
-                        System.out.println("Vsichni si te ted pamatuji jako statecneho bojovnika velkeho vlka, ktery se jmenoval " + hrac.jmeno);
+                        System.out.println("Vsichni si te ted pamatuji jako statecneho bojovnika velkeho vlka, ktery se jmenoval " + hrac.name);
                         System.out.println("Taky si dosahl rekordu nejvyssiho letu v te vesnici. (30 metru)");
                         break;
                     case 3:
                         System.out.println();
                         System.out.println("Arsen te vzal, vyhodil te z okna, pozdeji na tebe pristal stul, ktery te zabil.");
-                        System.out.println("Vsichni si te ted pamatuji jako clovicka, ktery nastval Arsena a jmenoval se " + hrac.jmeno);
+                        System.out.println("Vsichni si te ted pamatuji jako clovicka, ktery nastval Arsena a jmenoval se " + hrac.name);
                         break;
                     case 4:
                         System.out.println();
                         System.out.println("Drak vzletel, pripravil se a spalil te svym ohnivym dechem.");
                         System.out.println("Kralovstvi Alfonsa dobojovalo draka, ale na tebe nikdy nezapomneli.");
-                        System.out.println("Dokonce i po 150 letech se vypravi legendy o statecnem hrdinovi zvanem: " + hrac.jmeno);
+                        System.out.println("Dokonce i po 150 letech se vypravi legendy o statecnem hrdinovi zvanem: " + hrac.name);
                         break;
                 }
             } else if (enemy.hp <= 0) {
                 switch (enemy.pady) {
                     case 1:
                         System.out.println();
-                        System.out.println("Poslednim uderem si zabil dva maly vlky.");
+                        System.out.println("Poslednim uderem si zabil dva maly vlky. Lidi do ted vypraveji historky jak si to udelal.");
                         System.out.println();
                         break;
                     case 2:
                         System.out.println();
-                        System.out.println("Poslednim uderem si zabil velkeho vlka.");
+                        System.out.println("Poslednim uderem si zabil velkeho vlka. Bylo to nebezpecne, ale dokazal si to.");
                         System.out.println();
                         break;
                     case 3:
                         System.out.println();
-                        System.out.println("Poslednim uderem si zabil Arsena.");
+                        System.out.println("Poslednim uderem si zabil Arsena. Neni z toho uplne rad, ale to je zivot.");
                         System.out.println();
                         break;
                     case 4:
                         System.out.println();
-                        System.out.println("Poslednim uderem si zabil draka.");
+                        System.out.println("Poslednim uderem si zabil draka. Rikaji ti bojovnik vrahu a podle tebe je pojmenovana kniha Jak naucit draka zemrit.");
                         System.out.println();
                         break;
                 }
@@ -780,13 +780,13 @@ public class HraMain {
                     case 1:
                         System.out.println();
                         System.out.println("Ty si zautocil na jedno vlka mezitm co druhy sel ze zadu.");
-                        System.out.println("Vsichni si te ted pamatuji jako statecneho bojovnika dvou vlku, ktery se jmenoval " + hrac.jmeno);
+                        System.out.println("Vsichni si te ted pamatuji jako statecneho bojovnika dvou vlku, ktery se jmenoval " + hrac.name);
                         System.out.println();
                         break;
                     case 2:
                         System.out.println();
                         System.out.println("Ty si skocil na vlka a zautocil na nej tak silne, ze te shodil na zem. Tys zemrel, ale on taky.");
-                        System.out.println("Vsichni si te ted pamatuji jako statecneho bojovnika velkeho vlka, ktery se jmenoval " + hrac.jmeno);
+                        System.out.println("Vsichni si te ted pamatuji jako statecneho bojovnika velkeho vlka, ktery se jmenoval " + hrac.name);
                         System.out.println();
                         break;
                     case 3:
@@ -796,7 +796,7 @@ public class HraMain {
                         }else {
                             System.out.println("Hodil si na Arsena klacek, ten se zabodl do jeho hrudi, ale on uz bezel za tebou a nez dobehl tak zemrel a spadl na tebe.");
                         }
-                        System.out.println("Kvuli tomu jste oba dva mrtvy. Trvalo tri tydny nez se ten bar uklidil, ale nikdy se nezapomnelo jmeno " + hrac.jmeno);
+                        System.out.println("Kvuli tomu jste oba dva mrtvy. Trvalo tri tydny nez se ten bar uklidil, ale nikdy se nezapomnelo jmeno " + hrac.name);
                         System.out.println();
                         break;
                     case 4:
@@ -806,7 +806,7 @@ public class HraMain {
                         }else {
                             System.out.println("Hodil si na draka klacek, mezitim co on na tebe vystrelil ohen. Trefil si ho, ale on te spalil.");
                         }
-                        System.out.println("Kvuli tomu jste oba dva mrtvy. Lidi i po 150 letech zpivaji o slavnem a nebojacnem hrdinovi zvanem: " + hrac.jmeno);
+                        System.out.println("Kvuli tomu jste oba dva mrtvy. Lidi i po 150 letech zpivaji o slavnem a nebojacnem hrdinovi zvanem: " + hrac.name);
                         System.out.println();
                         break;
                 }
@@ -993,7 +993,7 @@ public class HraMain {
         }
         System.out.println();
     }
-    private static boolean wannaPlay(Scanner sc, boolean wannaPlay) {
+    private static boolean  wannaPlay(Scanner sc, boolean wannaPlay) {
         System.out.println("Chces jeste jednou?");
         System.out.println("""
                 A) Jo

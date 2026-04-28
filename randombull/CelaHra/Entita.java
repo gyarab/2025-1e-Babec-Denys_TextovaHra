@@ -1,7 +1,7 @@
 package randombull.randombull.CelaHra;
 
 public class Entita {
-    String jmeno;
+    String name;
     int hp;
     int damage;
 }

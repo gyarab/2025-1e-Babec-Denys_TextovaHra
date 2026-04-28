@@ -4,7 +4,7 @@ public class Hrac extends Entita {
 
     public Hrac(){
         hp = 20;
-        damage = 5;
+        damage = 7;
     }
     int procentoOpilost = 0;
     int procentoPlnosti = 0;
